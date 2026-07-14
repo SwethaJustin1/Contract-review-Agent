@@ -1,20 +1,18 @@
 # Contract Review Agent (LangGraph)
 
 A multi-step AI agent that reviews a contract, extracts its clauses, flags risk areas, and
-produces a plain-language summary report for a non-lawyer business reader (e.g. a delivery
-manager deciding whether to escalate a contract to legal).
+produces a plain-language summary report for user who can deciding whether to escalate a contract to legal team
 
 Built with [LangGraph](https://langchain-ai.github.io/langgraph/) as a personal project to get
-hands-on with agentic workflow design — state graphs, multi-step reasoning, and structured
-outputs from an LLM — rather than a single-prompt wrapper.
 
-## Why this project
+1.hands-on with agentic workflow design — 
+state graphs,multi-step reasoning, and structured
+outputs from an LLM .
+
+## why choose this  project
 
 I work on AI adoption and use-case enablement in an enterprise managed-services environment,
-where I evaluate GenAI use cases (including a LangGraph-based contract review agent built by our
-dev team) rather than building them myself. I built this project independently to get real,
-hands-on experience with LangGraph's graph-based agent architecture — designing state, wiring
-nodes, and handling conditional logic — rather than just reviewing others' output.
+ I built this project independently to get real,hands-on experience with LangGraph's graph-based agent architecture , logic than just looking at others outputs
 
 ## Architecture
 
@@ -70,9 +68,7 @@ Or save the report to a file:
 python cli.py examples/sample_contract.txt -o report.md
 ```
 
-The included `examples/sample_contract.txt` is a synthetic Master Services Agreement (not a
-real client contract) with a deliberately uncapped indemnification clause, so the demo run
-triggers the high-risk escalation path.
+The included `examples/sample_contract.txt` is a mock up Services Agreement for the demo run.
 
 See [`examples/sample_report.md`](examples/sample_report.md) for a real, unedited output from
 running the agent on this sample contract — including the correctly flagged indemnification
@@ -103,20 +99,15 @@ pytest tests/
 ```
 
 (Tests cover the deterministic `compile_report` node only — the LLM-calling nodes are
-integration-tested manually via the CLI, since mocking the Anthropic API is out of scope for
-this demo.)
-
+integration-tested manually via the CLI .
 ## Limitations / next steps
 
-- No conditional routing yet — a natural extension is branching high-risk contracts to a
-  dedicated "flag for legal" node instead of just annotating the report.
-- No PDF ingestion yet — currently takes plain text input.
-- Prompts are tuned for general commercial contracts (MSAs, vendor agreements), not
-  specialized domains (employment, IP licensing).
+No PDF ingestion yet — currently takes plain text input.
+No conditional routing yet 
+Prompts are tuned for general commercial contracts 
 
 ## Disclaimer
 
-This is a generic personal learning project built with synthetic data, for demonstrating
+This is a generic personal learning project built with synthetic mockup data, for demonstrating
 LangGraph agent design and building my own hands-on skills. It is not affiliated with, and does
-not use any code, data, or confidential information from, any employer. It is not legal advice
-and should not be used to make real contract decisions without qualified legal review.
+not use any code, data, or confidential information from, any employer. 
