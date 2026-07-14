@@ -74,6 +74,10 @@ The included `examples/sample_contract.txt` is a synthetic Master Services Agree
 real client contract) with a deliberately uncapped indemnification clause, so the demo run
 triggers the high-risk escalation path.
 
+See [`examples/sample_report.md`](examples/sample_report.md) for a real, unedited output from
+running the agent on this sample contract — including the correctly flagged indemnification
+and termination clauses.
+
 ## Project structure
 
 ```
